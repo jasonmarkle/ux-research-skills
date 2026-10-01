@@ -1,0 +1,10 @@
+{
+  "name": "ux-research-skills",
+  "description": "Evidence-graded skills for designing and reviewing interfaces: psychology, ethics, accessibility, patterns and writing.",
+  "version": "0.2.0",
+  "author": {
+    "name": "Jason Markle"
+  },
+  "license": "MIT",
+  "skills": "./skills"
+}

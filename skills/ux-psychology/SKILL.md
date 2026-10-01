@@ -1,0 +1,246 @@
+---
+name: ux-psychology
+description: Design and review interfaces using evidence-graded psychology and HCI research on perception, attention, memory, decisions, movement, waiting and motivation. Use when designing or critiquing any screen, flow, form, dashboard, landing page or UI mockup, even if psychology isn't mentioned.
+license: MIT
+metadata:
+  version: "0.2.0"
+---
+
+# UX psychology: designing and reviewing with the research
+
+This skill is a catalogue of findings from perception, cognition, motor control, behavioural science and human-computer interaction, each traced to its original published source and turned into design guidance. It is organised by what a person is doing at each moment of using an interface: seeing, attending, remembering, deciding, acting, waiting, feeling and learning.
+
+Every entry carries an evidence grade, because popular design advice often overstates the research:
+
+- **Strong**: replicated many times, including in applied settings.
+- **Moderate**: real effect, but with boundary conditions or limited evidence in interfaces.
+- **Contested**: failed replications or mixed meta-analyses. Use as a hypothesis to test, not a rule.
+- **Framework**: a useful way of thinking, not an experimental finding.
+
+The finding and sources behind each entry are in `references/evidence.md`. Open it, if it is available, when reviewing (to back each issue raised) or when someone asks why a rule exists. If it is not available, give the entry name and its grade. It is not needed for designing.
+
+## Two ways to use this
+
+Decide which task this is first. Making or changing a design: follow Designing and use each entry's **Do** line. Assessing existing work: follow Reviewing and use each entry's **Check** line; where an entry has none, review against its Do line. If asked to review and then fix, review first, then apply the Do lines to what was found.
+
+### Designing
+
+1. **Name the job.** Who uses this screen, what are they trying to get done, and what is the single most important action? If it isn't stated, assume sensibly and say so in one line.
+2. **Walk the stages** below in order and pick the four to six entries that matter most for this screen. Applying everything evenly produces a generic design.
+3. **Design the states, not just the screen.** Waiting, errors, empty states and endings are where several findings apply and where mockups usually have nothing.
+4. **Run the closing check** at the end of this file before presenting.
+5. **Explain lightly.** Mention an entry and its grade only where it justifies a choice the person might question. Open `references/evidence.md` if they ask why.
+
+### Reviewing
+
+1. **Look at the real design**, not a description of it.
+2. **Walk it as the user**: first glance, the main task step by step, what happens when something goes wrong, how it ends.
+3. **Work from what you observe to the entry that explains it**, using each entry's Check line. Do not go through the catalogue issuing a verdict per entry.
+4. **Rank by harm to the main task** multiplied by how many users will hit it. Report the five to eight findings that matter most.
+5. **Report** each as: where it is, what the user will experience, the entry behind it with its grade (and its finding from `references/evidence.md`, if available), and a concrete fix. Finish with two to four things that work and should be kept.
+6. For anything graded Contested or Moderate, say what to test instead of asserting the outcome.
+
+## The catalogue
+
+### 1. Seeing: how the eye organises a screen
+
+**Grouping by nearness and likeness** · Strong
+- Do: make spacing do the grouping. Tight inside a group, clearly wider between groups. One visual treatment per kind of element.
+- Check: a label equally distant from two fields; one kind of control styled several ways; static text that looks clickable.
+
+**Grouping by enclosure and connection** · Strong
+- Do: use a container, tint or connector when spacing alone is ambiguous. Avoid containers nested several deep, which creates competing groupings.
+- Check: unrelated items sharing a card; steps of a sequence with nothing linking them.
+
+**Simplicity and figure-ground** · Strong
+- Do: align to a grid, prefer plain regular shapes, and make sure content clearly sits in front of its background.
+- Check: near-miss alignment; layers where it is unclear what is in front; icons that need study.
+
+**Visual pop-out and distinctiveness** · Strong
+- Do: one distinct element per view, usually the primary action. Pair colour with shape, weight or a label so it survives colour-blindness and greyscale.
+- Check: several elements competing for emphasis; emphasis carried by colour alone.
+
+**Processing fluency** · Moderate
+- Do: high text contrast, legible type, familiar words, clean layout. Every element without a job makes the rest harder to process, so remove it.
+- Check: low-contrast text; decorative elements competing with content; jargon.
+
+**First impressions and the beauty halo** · Moderate, direction debated
+- Do: invest in visual craft for trust and first impressions, but never treat polish as evidence of usability.
+- Check: a rough finish that undermines trust; a polished mockup whose problems nobody has checked.
+
+### 2. Attending: what gets noticed
+
+**Goal-directed attention and blindness to the unexpected** · Strong
+- Do: put messages, errors and confirmations next to the thing they refer to. When something changes elsewhere on the screen, draw the eye to it.
+- Check: an error shown at the top of a long form; a total or status that updates silently off to the side.
+
+**Overlooking banner-like areas** · Moderate, original report not peer-reviewed
+- Do: keep important content out of banner-shaped strips, side rails and promotional styling.
+- Check: a key link or notice presented as a colourful banner.
+
+**Habituation to repeated alerts** · Moderate
+- Do: reserve interruptions for what matters. Make rare, serious warnings visibly different from routine notices, and require a deliberate action only for irreversible steps. A serious warning must interrupt the task; passive ones are ignored by almost everyone.
+- Check: confirmation dialogs on routine actions; every notice using the same alarming style.
+
+**Split attention** · Strong in instructional settings
+- Do: place labels on the chart, help beside the field, legends next to what they explain.
+- Check: a legend far from its chart; instructions on one screen for an action on another.
+
+### 3. Remembering: what people can hold in mind
+
+**Working memory is small** · Strong
+- Do: never require users to carry information between screens. Keep selections, totals and earlier answers visible.
+- Caution: this is not a limit on how many menu items may be shown. Visible options do not need to be memorised. The limit is nearer four chunks than "seven plus or minus two", and applies only to what must be held in mind.
+- Check: codes to memorise; a comparison that needs flipping between pages.
+
+**Chunking** · Strong
+- Do: titled sections in long forms, headed blocks in long text, formatted groups in long numbers.
+- Check: a single undivided form; walls of text; unformatted card or reference numbers.
+
+**Recognition memory is strong** · Strong
+- Do: show options, recent items and examples instead of asking for them from memory. Mark what has been visited or chosen.
+- Check: blank fields where a picker would do; commands that must be remembered.
+
+**Position in a list** · Strong for memory, Moderate for interfaces
+- Do: put the most important items at the ends of navigation and lists, the least important in the middle. First position gets the larger lift, so the single most important item goes first.
+- Check: a key item buried mid-menu.
+
+**Cognitive load** · Strong in learning research
+- Do: keep the effort the task needs; remove the effort the interface adds, such as inconsistent patterns, redundant labels and unexplained terms.
+- Check: screens where working out the interface takes longer than the task.
+
+**Unfinished tasks** · Contested
+- Do: surface drafts, incomplete setup and where the person left off, because it makes resuming easy. The claim that unfinished tasks stick in memory has not held up, so do not use it to justify nagging.
+- Check: no way to resume; saved progress that is invisible.
+
+### 4. Deciding: how choices get made
+
+**Choice reaction time** · Strong in the lab, Moderate for menus
+- Do: fewer, clearly different options at each decision point; a recommended option; stable positions so frequent users can learn locations.
+- Caution: this does not justify hiding needed options behind extra steps.
+- Note: the rule holds for familiar options. New users scan item by item, so order and group long lists.
+- Check: many equal-weight options; menus that reorder themselves.
+
+**Too many options** · Contested
+- Do: make options comparable on the same attributes, offer filters and a sensible recommendation. Reducing the count is one tool, not the goal.
+- Note: more options hurt mainly when they are hard to compare, preferences are unclear or time is short. On average the effect is near zero, so do not cut options on this ground alone.
+- Check: plans or products that cannot be compared side by side.
+
+**Defaults** · Strong
+- Do: set defaults to what most users would choose for themselves if they thought about it. Prefill what the system already knows.
+- Ethics: consent, marketing and paid add-ons must not be preselected.
+- Check: questions the system could answer itself; pre-ticked boxes that serve the business.
+
+**Anchoring and framing** · Strong
+- Do: order and word options so that comparisons are fair. Show the information people need to judge value.
+- Ethics: invented "was" prices and inflated anchors are deception.
+- Check: a reference price with no basis; wording that slants a neutral choice.
+
+**Loss aversion** · Strong, size debated
+- Do: protect work (autosave, undo, drafts), say clearly what a destructive action will remove, and make trial endings predictable.
+- Ethics: do not manufacture fear of loss to pressure a decision.
+- Check: destructive actions with no undo; unclear consequences of cancelling or downgrading.
+
+**Context effects between options** · Moderate, attraction effect contested
+- Do: expect a middle tier to draw choices, so make it a good fit for most users.
+- Ethics: do not add an option whose only purpose is to make another look better.
+- Check: a tier nobody could sensibly choose.
+
+**Following others** · Moderate
+- Do: show real, specific and verifiable evidence of use, such as genuine reviews and counts. Evidence about people in the same situation as the user works best.
+- Ethics: invented reviews, counts or activity notices are deception.
+- Check: social evidence that cannot be verified.
+
+### 5. Acting: pointing, tapping and making mistakes
+
+**Pointing time** · Strong
+- Do: large primary actions near where the hand or pointer already is; touch targets around 9 to 10 mm (about 48 dp or CSS px); spacing between adjacent targets; screen edges and corners are easy to hit with a mouse.
+- Check: tiny icons; crowded targets; a primary action far from the content it acts on.
+
+**Steering through narrow paths** · Strong
+- Do: avoid deep cascading menus and thin sliders; give hover paths generous width and forgiving timing.
+- Check: nested fly-out menus that close when the pointer strays.
+
+**Compatibility between controls and effects** · Strong
+- Do: place controls beside or in the same arrangement as what they change; keep direction conventions (up means more, right means forward).
+- Check: a control far from its effect; ordering that differs between control and display.
+
+**Affordances and signifiers** · Framework
+- Do: make interactive elements look interactive and consistent; give every state (hover, focus, pressed, disabled) a visible form.
+- Check: flat text that is secretly a button; a disabled control with no explanation.
+
+**Slips and mistakes** · Framework with strong empirical basis
+- Do: prevent slips with constraints, spacing and undo; prevent mistakes with clear system state and plain language. Accept input in any reasonable format and tidy it up, and make error messages say what happened and how to fix it.
+- Check: strict input formats; errors that blame the user; a destructive action beside a frequent one.
+
+### 6. Waiting: time and feedback
+
+**Response-time thresholds** · Moderate
+- Do: acknowledge every action immediately; show a placeholder for short waits and real progress for long ones; let long operations run in the background. As rules of thumb, not measured limits: about a tenth of a second feels immediate, about one second is a prompt response, and about ten seconds is the length of a single unit of work.
+- Check: no pressed or loading state; a blank screen while loading.
+
+**How waits feel** · Moderate
+- Do: say what is happening and roughly how long; show progress that never stalls or runs backwards; give the person something useful to see meanwhile. Where pacing can be chosen, progress should speed up toward the end, not slow down.
+- Check: an indeterminate spinner on a long operation.
+
+### 7. Feeling: motivation and memory of the experience
+
+**Progress toward a goal** · Moderate
+- Do: show progress in multi-step tasks and count work already done.
+- Ethics: progress must be real. Fake steps or padded totals are manipulation.
+- Check: a long flow with no sense of position or remaining effort.
+
+**Peaks and endings** · Strong for short episodes, weaker for long ones
+- Do: find the peak (the result, the success, the worst failure) and the last screen, and design those with care.
+- Check: a flat or confusing confirmation; a badly handled failure at the most stressful step.
+
+**Absorption in a task** · Framework
+- Do: keep interruptions off the main path; keep controls responsive and predictable.
+- Check: modals, forced sign-up or upsells in the middle of the main task.
+
+**Autonomy and competence** · Strong as theory
+- Do: offer real choices, a clear way out, undo, and explanations of why something is asked. Let people skip and return.
+- Check: forced paths, no exit, unexplained requests for personal data.
+
+### 8. Learning: expectations and first use
+
+**Mental models** · Framework
+- Do: use the user's vocabulary and order of steps; make system state visible; explain at the moment of difference when the product must depart from expectation.
+- Check: internal jargon; steps ordered by the database and not by the task.
+
+**Practice and familiarity** · Strong
+- Do: keep positions and behaviour consistent so practice pays off, and follow established conventions so practice gained elsewhere is not wasted (an inference from the research on practice and repeated exposure, not a tested result). Spend novelty only where it is the product's value.
+- Check: a common pattern reinvented without benefit; inconsistent behaviour between screens.
+
+**People start doing, not reading** · Moderate, observational
+- Do: make the first useful action obvious without a tour; give help in context at the point of need.
+- Check: a long onboarding carousel; an empty state with no next step.
+
+**Staged complexity** · Moderate
+- Do: show the common path first and reveal advanced options on request, keeping them findable.
+- Check: every option at equal prominence on first use.
+
+## When findings pull against each other
+
+- **Fewer options vs. findability.** Prioritise and recommend before hiding. Hide only what is truly secondary.
+- **Standing out vs. consistency.** One accent per view, everything else uniform.
+- **Convention vs. originality.** Conventional in structure and interaction, distinctive in content and visual identity.
+- **Persuasion vs. honesty.** Entries marked "Ethics" can be turned against users. Do not design false urgency or scarcity, fake progress, invented social evidence, preselected consent, guilt-worded opt-outs or hidden cancellation. If asked for one, say why it is a problem and offer the honest version.
+
+## Closing check
+
+1. Within five seconds, is it clear what this is and what to do first?
+2. Is there exactly one visually dominant action per view?
+3. Could any element be removed without losing function?
+4. Do spacing and containers make clear what belongs together?
+5. Does everything that looks alike behave alike?
+6. Are choices few enough, comparable, and led by a recommendation?
+7. Are targets large, reachable, and separated from destructive ones?
+8. Does the user ever have to remember something from an earlier screen?
+9. Does it follow patterns people know from similar products?
+10. Are loading, error, empty and end states designed?
+11. Would the user feel tricked by any default, framing or urgency cue?
+
+## Limits of this skill
+
+These are findings about people in general, mostly from laboratory and field studies. They predict likely problems; they do not replace testing with real users of the product. Accessibility is covered by the `ux-accessibility` skill in this suite, and ethical limits on persuasion by `ux-ethics`, though glaring problems (unreadable contrast, colour-only meaning, tiny targets) should always be raised.

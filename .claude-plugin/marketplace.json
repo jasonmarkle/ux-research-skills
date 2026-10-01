@@ -1,0 +1,14 @@
+{
+  "name": "ux-research-skills",
+  "description": "Evidence-graded skills for designing and reviewing interfaces.",
+  "owner": {
+    "name": "Jason Markle"
+  },
+  "plugins": [
+    {
+      "name": "ux-research-skills",
+      "source": "./",
+      "description": "Evidence-graded skills for designing and reviewing interfaces: psychology, ethics, accessibility, patterns and writing."
+    }
+  ]
+}
